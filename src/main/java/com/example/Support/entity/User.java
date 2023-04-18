@@ -23,6 +23,13 @@ public class User {
         this.role = role;
     }
 
+    public User(String name, String password, String email, String role) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
+
     // Геттеры и сеттеры
     public Long getId() {
         return id;

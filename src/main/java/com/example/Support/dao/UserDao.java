@@ -18,10 +18,24 @@ public class UserDao {
     }
     public List<User> getUsers(){
         String sql = "SELECT * FROM users";
-        List<User> users = jdbcTemplate.query(sql, new UserRowMapper());
+        return jdbcTemplate.query(sql, new UserRowMapper());
+    }
 
-        System.out.println(users.get(0));
-        return users;
+    public User addUser(User user) {
+        String sql = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getPassword(), user.getRole());
+        return user;
+    }
+
+    public User update(User user){
+        String sql = "UPDATE users SET name = ?, email = ?, password = ?, role = ? WHERE ID = ?";
+        jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getPassword(), user.getRole(), user.getId());
+        return user;
+    }
+
+    public void delete(long id){
+        String sql = "DELETE From users WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 
 }
