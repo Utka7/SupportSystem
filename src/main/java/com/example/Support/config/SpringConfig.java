@@ -24,21 +24,4 @@ public class SpringConfig {
         this.environment = environment;
     }
 
-    @Bean
-    public DataSource dataSource(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("driver")));
-        dataSource.setUrl("url");
-        dataSource.setUsername("username");
-        dataSource.setPassword("password");
-
-        return dataSource;
-    }
-
-    @Bean
-    public JdbcTemplate jdbcTemplate(){
-        return  new JdbcTemplate(dataSource());
-    }
-
 }
