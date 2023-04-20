@@ -1,4 +1,4 @@
-package com.example.Support.mapper;
+package com.example.Support.entity.mapper;
 
 import com.example.Support.entity.User;
 import org.springframework.jdbc.core.RowMapper;
