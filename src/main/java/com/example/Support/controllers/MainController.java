@@ -31,8 +31,6 @@ public class MainController {
     public ResponseEntity<User> updateUser(long id,String name, String password, String email, String role){
         User updatedUser = new User(id, name, password, email, role);
         return ResponseEntity.status(HttpStatus.CREATED).body( userService.updateUser(updatedUser));
-//        User updatedUser = userService.updateUser(id, user);
-
     }
 
     @DeleteMapping("/{userId}")

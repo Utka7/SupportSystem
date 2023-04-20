@@ -6,6 +6,20 @@ public class Complaint {
     private String status;
     private Long userId;
 
+    public Complaint(String description,String status, Long userId){
+        this.description = description;
+        this.status = status;
+        this.userId = userId;
+    }
+    public Complaint(Long id,String description,String status, Long userId){
+        this.id = id;
+        this.description = description;
+        this.status = status;
+        this.userId = userId;
+    }
+
+    public Complaint(){}
+
     public Long getId() {
         return id;
     }

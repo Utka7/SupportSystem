@@ -1,7 +1,7 @@
 package com.example.Support.dao;
 
 import com.example.Support.entity.User;
-import com.example.Support.mapper.UserRowMapper;
+import com.example.Support.entity.mapper.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
